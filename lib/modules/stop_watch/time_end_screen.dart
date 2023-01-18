@@ -65,7 +65,7 @@ class _TimeEndScreenState extends State<TimeEndScreen> {
              const SizedBox(height:60),
              CustomButton(
                text: "return home"+" ",
-               color1:ColorManager.primary,
+               color1:ColorManager.primary!,
                color2: ColorManager.black,
                onPressed:() async {
 
@@ -79,7 +79,7 @@ class _TimeEndScreenState extends State<TimeEndScreen> {
                  Navigator.pushReplacement(
                    context,
                    MaterialPageRoute(
-                       builder: (context) => HomeLayout()),
+                       builder: (context) => HomeLayout('false')),
                  );
                },
              ),

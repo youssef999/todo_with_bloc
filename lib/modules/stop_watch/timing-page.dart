@@ -57,7 +57,7 @@ class _TimingPageState extends State<TimingPage> {
            NumberPicker(
              value: _currentIntHours,
              minValue: 0,
-             maxValue: 10,
+             maxValue: 24,
              step: 1,
              itemHeight: 50,
              axis: Axis.horizontal,
@@ -91,11 +91,12 @@ class _TimingPageState extends State<TimingPage> {
                  icon: const Icon(Icons.add),
                  onPressed: () => setState(() {
                    final newValue = _currentIntHours + 1;
-                   _currentIntHours = newValue.clamp(0, 10);
+                   _currentIntHours = newValue.clamp(0, 24);
                  }),
                ),
              ],
            ),
+
            const Divider(color: Colors.grey, height: 10),
 
            const SizedBox(height: 8),
@@ -126,7 +127,7 @@ class _TimingPageState extends State<TimingPage> {
                  }),
                ),
                Custom_Text(
-                 text:LocaleKeys.min.tr()+ ' : $_currentIntMin',
+                 text:'${LocaleKeys.min.tr()} : $_currentIntMin',
                  fontSize: 16,
                  color:ColorManager.black,
                ),
@@ -188,9 +189,9 @@ class _TimingPageState extends State<TimingPage> {
 
            const SizedBox(height:5),
            CustomButton(
-             text: 'بدا العد',
+             text: LocaleKeys.start.tr(),
              color2:ColorManager.black,
-             color1: ColorManager.primary,
+             color1: ColorManager.primary!,
              onPressed: (){
 
                Navigator.push(

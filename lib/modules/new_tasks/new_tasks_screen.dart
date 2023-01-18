@@ -10,6 +10,7 @@ import 'package:todo_app/widgets/build_taks_item.dart';
 import 'package:todo_app/widgets/custom_text.dart';
 import 'package:admob_flutter/admob_flutter.dart';
 
+
 class NewTasksScreen extends StatelessWidget {
 
   bool  drawer;
@@ -29,7 +30,7 @@ class NewTasksScreen extends StatelessWidget {
 
        return
          ConditionalBuilder(
-           condition: appCubit.newTasks.length>0,
+           condition: appCubit.newTasks.isNotEmpty,
              fallback: (context) =>
 
                  Center(
@@ -59,15 +60,19 @@ class NewTasksScreen extends StatelessWidget {
                  ],
                ),
              ),
-           builder: (context) =>   ListView.separated(separatorBuilder: (context, index) =>
-               Container(
-                 height: 1,
-                 color: Colors.grey[300],
-                 width: double.infinity,
-               )
+           builder: (context) =>
+
+
+               GridView.builder(
+               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                   crossAxisCount:2,
+
+
+               ),// (orientation == Orientation.portrait) ? 2 : 3),
+               itemBuilder: (BuildContext context, int index) =>
+                   buildTaskItem(appCubit.newTasks[index],context,Colors.grey,false,drawer,'new')
                , itemCount: appCubit.newTasks.length,
-               itemBuilder: (context, index) =>
-                   buildTaskItem(appCubit.newTasks[index],context,Colors.grey,false,drawer)
+               // itemBuilder: (context, index) =>
            ),
 
 

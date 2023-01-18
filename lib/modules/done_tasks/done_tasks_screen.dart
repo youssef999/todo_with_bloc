@@ -14,7 +14,10 @@ class DoneTasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  BlocConsumer<AppCubit,AppStates>(
+    return 
+    
+    
+     BlocConsumer<AppCubit,AppStates>(
         listener:(context,state){
         },
         builder:(context,state) {
@@ -22,7 +25,7 @@ class DoneTasksScreen extends StatelessWidget {
 
           return
             ConditionalBuilder(
-              condition: appCubit.doneTasks.length>0,
+              condition: appCubit.doneTasks.isNotEmpty,
               fallback: (context) =>
                   Center(
                     child: Column(
@@ -48,16 +51,18 @@ class DoneTasksScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-              builder: (context)=> ListView.separated
-                (separatorBuilder: (context, index) =>
-                  Container(
-                    height: 1,
-                    color: Colors.grey[300],
-                    width: double.infinity,
-                  )
-                  , itemCount: appCubit.doneTasks.length,
+              builder: (context)=>
+                  GridView.builder(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount:2,
+                        crossAxisSpacing: 2,
+                        mainAxisSpacing:2
+
+                      ),
+
+                  itemCount: appCubit.doneTasks.length,
                   itemBuilder: (context, index) =>
-                      buildTaskItem(appCubit.doneTasks[index],context,Colors.green,false,false)
+                      buildTaskItem(appCubit.doneTasks[index],context,Colors.green,false,false,'done')
               )
             );
         } );

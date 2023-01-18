@@ -26,7 +26,8 @@ class Custom_Text extends StatelessWidget {
           color:color,
           height:height,
           fontSize:fontSize,
-          fontWeight:FontWeight.w700),),
+          wordSpacing: 1.2,
+          fontWeight:FontWeight.w400),),
     );
   }
 }

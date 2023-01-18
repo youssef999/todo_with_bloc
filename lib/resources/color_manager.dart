@@ -3,14 +3,17 @@ import 'package:flutter/material.dart';
 class ColorManager {
 
    // add 0xff to hexa color
-  static Color primary = const Color(0xfff67FAFF);
-  static Color darkPrimary = const Color(0xff23F3FA);
-  static Color lightPrimary = const Color(0xCC23F3FA);
+  static Color? primary = Colors.blueAccent[200];
+  static Color ?darkPrimary = Colors.blueAccent[300];
+  static Color ?lightPrimary = Colors.blueAccent[400];
   static Color darkGrey = const Color(0xff525252);
   static Color grey = const Color(0xff737477);
   static Color lightGrey = const Color(0xff9E9E9E);
   static Color black = const Color(0xff000000);
-
+  static Color prem = const Color(0xffffffeb8);
+  static Color prem2 = const Color(0xfffffffc516);
+  static Color greenDark = const Color(0xffff216a01);
+  static Color yellow = const Color(0xfffffffd1);
   // new colors
 // color with 80% opacity
   static Color grey1 = const Color(0xff707070);

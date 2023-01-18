@@ -102,12 +102,12 @@ class _CountdownPageState extends State<CountdownPage>
               children: [
 
                 SizedBox(
-                  width: 250,
+                  width: 260,
                   height: 250,
                   child: CircularProgressIndicator(
                     backgroundColor: ColorManager.primary,
                     value: progress,
-                    strokeWidth: 6,
+                    strokeWidth: 7,
                   ),
                 ),
                 GestureDetector(
@@ -116,7 +116,7 @@ class _CountdownPageState extends State<CountdownPage>
                       showModalBottomSheet(
                         context: context,
                         builder: (context) => Container(
-                          height: 240,
+                          height: 224,
                           child: CupertinoTimerPicker(
                             initialTimerDuration: controller.duration!,
                             onTimerDurationChanged: (time) {
@@ -131,16 +131,18 @@ class _CountdownPageState extends State<CountdownPage>
                   },
                   child: AnimatedBuilder(
                     animation: controller,
-                    builder: (context, child) => Text(
-                      countText,
-                      style: TextStyle(
-                        fontSize: 60,
-                        fontWeight: FontWeight.bold,
+                    builder: (context, child) => Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text(
+                        countText,
+                        style: const TextStyle(
+                          fontSize: 50,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                 ),
-
               ],
             ),
           ),

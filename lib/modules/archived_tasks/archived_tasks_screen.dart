@@ -3,8 +3,10 @@ import 'package:admob_flutter/admob_flutter.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:todo_app/app_cubit/cubit.dart';
 import 'package:todo_app/app_cubit/states.dart';
+import 'package:todo_app/resources/color_manager.dart';
 import 'package:todo_app/widgets/build_taks_item.dart';
 
 
@@ -16,6 +18,30 @@ import 'package:todo_app/widgets/build_taks_item.dart';
 
   @override
   Widget build(BuildContext context) {
+
+    final box=GetStorage();
+    int color=box.read('color')??0;
+    Color color1=Colors.white;
+    Color color3=Colors.black;
+    Color? color4=ColorManager.primary;
+
+    if(color==1){
+      color1=Colors.white;
+      color3=Colors.white;
+    }
+
+    if(color==2){
+      color1=ColorManager.yellow;
+      color3=Colors.pinkAccent;
+      color4=ColorManager.prem;
+    }
+
+    if(color==0){
+      color1=Colors.white;
+      color3=Colors.white;
+    }
+
+
     return
       BlocConsumer<AppCubit,AppStates>(
           listener:(context,state){
@@ -25,7 +51,7 @@ import 'package:todo_app/widgets/build_taks_item.dart';
 
             return
               ConditionalBuilder(
-                condition: appCubit.archivedTasks.length>0,
+                condition: appCubit.archivedTasks.isNotEmpty,
                 fallback: (context) =>
                     Center(
                       child: Column(
@@ -54,17 +80,13 @@ import 'package:todo_app/widgets/build_taks_item.dart';
                       ),
                     ),
                 builder: (context)=>
+                    GridView.builder(
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount:2,
 
-                    ListView.separated
-                  (separatorBuilder: (context, index) =>
-                    Container(
-                      height: 1,
-                      color: Colors.grey[300],
-                      width: double.infinity,
-                    )
-                    , itemCount: appCubit.archivedTasks.length,
+                        ), itemCount: appCubit.archivedTasks.length,
                     itemBuilder: (context, index) =>
-                        buildTaskItem(appCubit.archivedTasks[index],context,Colors.grey,true,drawer)
+                        buildTaskItem(appCubit.archivedTasks[index],context,Colors.grey,true,drawer,'archived')
                 ),
               );
           } );

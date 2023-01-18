@@ -46,8 +46,11 @@ class _ChangeLangState extends State<ChangeLang> {
 
         child: BlocConsumer<AppCubit, AppStates>(
             listener: (context, state) {
+
             },
+
             builder: (context, state) {
+
               AppCubit appCubit = AppCubit.get(context);
 
               return
@@ -64,7 +67,7 @@ class _ChangeLangState extends State<ChangeLang> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 20.0),
+                          margin: const EdgeInsets.only(bottom: 20.0),
                           child: AdmobBanner(
                             adUnitId: 'ca-app-pub-6262607150176210/8943464259',
                             adSize: AdmobBannerSize.BANNER,
@@ -77,12 +80,18 @@ class _ChangeLangState extends State<ChangeLang> {
                           ),
                         ),
 
-                        Container(
-                          height: 170,
-                          child: Image.asset(
-                              'assets/change2.png', fit: BoxFit.cover),
+
+                        CircleAvatar(
+                          radius: 80,
+                          backgroundColor: Colors.white,
+                          child: SizedBox(
+                            height: 110,
+                            child: Image.asset(
+                                'assets/lan.png', fit: BoxFit.cover),
+                          ),
                         ),
-                        SizedBox(height: 20,),
+
+                        const SizedBox(height: 20,),
 
                         SizedBox(
                           width: 230,
@@ -104,16 +113,14 @@ class _ChangeLangState extends State<ChangeLang> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomeLayout()),
-
-
+                                    builder: (context) => HomeLayout('false')),
                               );
 
                               appCubit. changeLang();
                             },
                             child: const Custom_Text(
                               text: "العربية",
-                              color: Colors.black,
+                              color: Colors.white,
                               alignment: Alignment.center,
                               fontSize: 19,
                             ),
@@ -130,6 +137,8 @@ class _ChangeLangState extends State<ChangeLang> {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15)),
                             onPressed: () async {
+
+                              await context.setLocale(const Locale('en'));
                               final isLoaded = await interstitialAd.isLoaded;
                               if (isLoaded ?? false) {
                                 interstitialAd.show();
@@ -140,14 +149,14 @@ class _ChangeLangState extends State<ChangeLang> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => HomeLayout()),
+                                    builder: (context) => HomeLayout('false')),
                               );
 
                               appCubit. changeLang();
                             },
                             child: const Custom_Text(
                               text: "English ",
-                              color: Colors.black,
+                              color: Colors.white,
                               fontSize: 19,
                               alignment: Alignment.center,
                             ),
