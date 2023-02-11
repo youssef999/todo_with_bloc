@@ -9,7 +9,6 @@ import 'package:todo_app/app_cubit/states.dart';
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:todo_app/layouts/goals/add_goals.dart';
 import 'package:todo_app/layouts/goals/goals_login.dart';
-import 'package:todo_app/layouts/goals/goals_screen.dart';
 import 'package:todo_app/layouts/goals/show_goals_screen.dart';
 import 'package:todo_app/modules/archived_tasks/archived_tasks_screen.dart';
 import 'package:todo_app/modules/categry_tasks/category_tasks.dart';
@@ -129,7 +128,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/icon2.jpg", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.tasks2.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 13,),),
 
                           onTap: () {
 
@@ -164,7 +163,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                       "assets/icon2.jpg", fit: BoxFit.fill,)),
                                 title: Text(LocaleKeys.tasks2.tr(),
                                   style: const TextStyle(
-                                    color: Colors.black, fontSize: 15,),),
+                                    color: Colors.black, fontSize: 13,),),
                                 onTap: () {
                                   setState(() {
                                     show=false;
@@ -183,12 +182,15 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text: LocaleKeys.dailytask.tr(),
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
                                   ),
                                   onTap:() async {
+
+
+
                                     final isLoaded = await interstitialAd.isLoaded;
                                     if (isLoaded ?? false) {
                                       interstitialAd.show();
@@ -201,18 +203,18 @@ class _MainDrawerState extends State<MainDrawer> {
 
                                     if(email=='x'){
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoalsLogin()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              GoalsLogin()));
                                     }else{
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => AddGoalsScreen(cat: 'day')),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              ShowGoalsScreen(
+                                                  LocaleKeys.Goals.tr(),
+                                                  'day'
+                                              )));
                                     }
-                                  // ignore: use_build_context_synchronously
 
                                   },
                                 ),
@@ -222,30 +224,37 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text:LocaleKeys.weektask.tr(),
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
                                   ),
-                                  onTap:(){
+                                  onTap:() async {
+
+                                    final isLoaded = await interstitialAd.isLoaded;
+                                    if (isLoaded ?? false) {
+                                      interstitialAd.show();
+                                    } else {
+                                      print("not loaded");
+                                    }
 
                                     final box=GetStorage();
                                     String email=box.read('email')??'x';
 
                                     if(email=='x'){
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoalsLogin()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              GoalsLogin()));
                                     }else{
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => AddGoalsScreen(cat: 'week')),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              ShowGoalsScreen(
+                                                  LocaleKeys.Goals.tr(),
+                                                  'week'
+                                              )));
                                     }
-                                                
 
 
                                                    
@@ -258,27 +267,37 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text: LocaleKeys.monthtask.tr(),
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
                                   ),
-                                  onTap:(){
+                                  onTap:() async {
+
+
+                                    final isLoaded = await interstitialAd.isLoaded;
+                                    if (isLoaded ?? false) {
+                                      interstitialAd.show();
+                                    } else {
+                                      print("not loaded");
+                                    }
+
                                     final box=GetStorage();
                                     String email=box.read('email')??'x';
 
                                     if(email=='x'){
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoalsLogin()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              GoalsLogin()));
                                     }else{
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => AddGoalsScreen(cat: 'month')),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              ShowGoalsScreen(
+                                                  LocaleKeys.Goals.tr(),
+                                                  'month'
+                                              )));
                                     }
                                   },
                                 ),
@@ -288,28 +307,36 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text: LocaleKeys.yeartask.tr(),
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
                                   ),
-                                  onTap:(){
+                                  onTap:() async {
+
+                                    final isLoaded = await interstitialAd.isLoaded;
+                                    if (isLoaded ?? false) {
+                                      interstitialAd.show();
+                                    } else {
+                                      print("not loaded");
+                                    }
 
                                     final box=GetStorage();
                                     String email=box.read('email')??'x';
 
                                     if(email=='x'){
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => GoalsLogin()),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              GoalsLogin()));
                                     }else{
                                       Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => AddGoalsScreen(cat: 'year')),
-                                      );
+                                          context,
+                                          MaterialPageRoute(builder: (context) =>
+                                              ShowGoalsScreen(
+                                                  LocaleKeys.Goals.tr(),
+                                                  'year'
+                                              )));
                                     }
                                   },
                                 ),
@@ -327,8 +354,52 @@ class _MainDrawerState extends State<MainDrawer> {
                         ),
 
 
-                      const SizedBox(height: 10,),
 
+                      const SizedBox(height: 16,),
+                      ListTile(
+                          leading:
+                          Container(
+                              padding: const EdgeInsets.only(bottom: 20),
+                              width: 50,
+                              height:80,
+                              child: Image.asset(
+                                "assets/goal.jpg", fit: BoxFit.fill,)),
+                          title: Text(LocaleKeys.Goals.tr(),
+                            style: const TextStyle(
+                              color: Colors.black, fontSize: 14,),),
+                          onTap: () async {
+
+
+                            final isLoaded = await interstitialAd.isLoaded;
+                            if (isLoaded ?? false) {
+                              interstitialAd.show();
+                            } else {
+                              print("not loaded");
+                            }
+
+                            final box=GetStorage();
+                            String email=box.read('email')??'x';
+
+                            if(email=='x'){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>
+                                      GoalsLogin()));
+                            }else{
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>
+                                      ShowGoalsScreen(
+                                          LocaleKeys.Goals.tr(),
+                                          ''
+                                      )));
+                            }
+                            // ignore: use_build_context_synchronously
+
+
+                          }
+                      ),
+                      const SizedBox(height: 10,),
                       ListTile(
                           leading:
                           Container(
@@ -339,7 +410,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/icon1.png", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.done.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 14,),),
                           onTap: () {
                             Navigator.push(
                                 context,
@@ -393,7 +464,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/icon4.png", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.archived.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 14,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {
@@ -441,47 +512,7 @@ class _MainDrawerState extends State<MainDrawer> {
                           }
                       ),
 
-                      const SizedBox(height: 16,),
-                      ListTile(
-                          leading:
-                          Container(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              width: 50,
-                              height:80,
-                              child: Image.asset(
-                                "assets/goal.jpg", fit: BoxFit.fill,)),
-                          title: Text(LocaleKeys.Goals.tr(),
-                            style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
-                          onTap: () async {
-                            final isLoaded = await interstitialAd.isLoaded;
-                            if (isLoaded ?? false) {
-                              interstitialAd.show();
-                            } else {
-                              print("not loaded");
-                            }
 
-                            final box=GetStorage();
-                            String email=box.read('email')??'x';
-
-                            if(email=='x'){
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) =>
-                                      GoalsLogin()));
-                            }else{
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) =>
-                                      ShowGoalsScreen(
-                                        LocaleKeys.Goals.tr(),
-                                      )));
-                            }
-                            // ignore: use_build_context_synchronously
-
-
-                          }
-                      ),
 
                       const SizedBox(height: 190,),
 
@@ -501,7 +532,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/s1.png", fit: BoxFit.fill,)),
                           title:Text(LocaleKeys.settings.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 14,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {
@@ -531,7 +562,7 @@ class _MainDrawerState extends State<MainDrawer> {
                             LocaleKeys.rateApp.tr(),
 
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 14,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {

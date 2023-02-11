@@ -7,10 +7,11 @@ class Custom_Text extends StatelessWidget {
   final Color color;
   final Alignment alignment;
   final double height;
-
+  final FontWeight font;
   const Custom_Text(
       {
         required this.text,
+        this.font=FontWeight.w400,
         this.fontSize=16.0,
         this.color=Colors.black,
         this.alignment=Alignment.topLeft,
@@ -27,7 +28,7 @@ class Custom_Text extends StatelessWidget {
           height:height,
           fontSize:fontSize,
           wordSpacing: 1.2,
-          fontWeight:FontWeight.w400),),
+          fontWeight:font),),
     );
   }
 }

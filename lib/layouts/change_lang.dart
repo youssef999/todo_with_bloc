@@ -163,6 +163,44 @@ class _ChangeLangState extends State<ChangeLang> {
                           ),
                         ),
 
+
+                        const SizedBox(height: 30,),
+
+                        SizedBox(
+                          height: 80,
+                          width: 230,
+                          child: RaisedButton(
+                            color: ColorManager.primary,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15)),
+                            onPressed: () async {
+
+                              await context.setLocale(const Locale('ko'));
+                              final isLoaded = await interstitialAd.isLoaded;
+                              if (isLoaded ?? false) {
+                                interstitialAd.show();
+                              } else {
+                                print("not loaded");
+                              }
+
+                              Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomeLayout('false')),
+                              );
+
+                              appCubit. changeLang();
+                            },
+                            child: const Custom_Text(
+                              text: "한국인",
+                              color: Colors.white,
+                              fontSize: 19,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        ),
+
+
                       ],
                     ),
                   ),

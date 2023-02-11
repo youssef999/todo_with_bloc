@@ -18,11 +18,14 @@ abstract class  LocaleKeys {
   static const enterdes = 'enterdes';
   static const TaskDone = 'TaskDone';
   static const goalDone = 'goalDone';
+  static const goalEdit = 'goalEdit';
   static const timeend = 'timeend';
   static const dateend = 'dateend';
   static const entertime = 'entertime';
   
   static const notes = 'notes';
+  static const goal = 'goal';
+  static const cat = 'cat';
   static const notes2 = 'notes2';
 
   static const today = 'today';
@@ -42,6 +45,8 @@ abstract class  LocaleKeys {
   static const tasks = 'tasks';
   static const tasks3 = 'tasks3';
   static const done = 'done';
+  static const delete = 'delete';
+  static const deleteDone = 'deleteDone';
   static const archived = 'archived';
   static const changeLang = 'changeLang';
 
@@ -89,6 +94,7 @@ static const weekGoal = 'weekGoal';
 static const monthGoal = 'monthGoal';
 static const yearGoal = 'yearGoal';
 static const Goals = 'Goals';
+static const Goal = 'Goal';
 
 
 

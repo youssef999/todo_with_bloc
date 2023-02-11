@@ -17,12 +17,14 @@ import 'resources/bloc_observer.dart';
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
   await EasyLocalization.ensureInitialized();
+
   runApp
     (
       EasyLocalization(
       supportedLocales: const [
         Locale('en'),
-        Locale('ar')
+        Locale('ar'),
+        Locale('ko')
       ],
       path: 'assets/tr/',
       fallbackLocale: const Locale('en'),
