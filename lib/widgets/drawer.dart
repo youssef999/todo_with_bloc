@@ -37,6 +37,7 @@ class _MainDrawerState extends State<MainDrawer> {
 
   @override
   void initState() {
+
     final box=GetStorage();
     int color=box.read('color')??0;
 
@@ -128,7 +129,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/icon2.jpg", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.tasks2.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 13,),),
+                              color: Colors.black, fontSize: 12,),),
 
                           onTap: () {
 
@@ -163,7 +164,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                       "assets/icon2.jpg", fit: BoxFit.fill,)),
                                 title: Text(LocaleKeys.tasks2.tr(),
                                   style: const TextStyle(
-                                    color: Colors.black, fontSize: 13,),),
+                                    color: Colors.black, fontSize: 12,),),
                                 onTap: () {
                                   setState(() {
                                     show=false;
@@ -182,7 +183,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text: LocaleKeys.dailytask.tr(),
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
@@ -307,7 +308,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                     height: 40,
                                     child: Custom_Text(
                                       text: LocaleKeys.yeartask.tr(),
-                                      fontSize: 14,
+                                      fontSize: 12,
                                       alignment: Alignment.center,
                                       color:ColorManager.grey,
                                     ),
@@ -355,13 +356,13 @@ class _MainDrawerState extends State<MainDrawer> {
 
 
 
-                      const SizedBox(height: 16,),
+                      const SizedBox(height: 14,),
                       ListTile(
                           leading:
                           Container(
-                              padding: const EdgeInsets.only(bottom: 20),
+                              padding: const EdgeInsets.only(bottom: 6),
                               width: 50,
-                              height:80,
+                              height:90,
                               child: Image.asset(
                                 "assets/goal.jpg", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.Goals.tr(),
@@ -399,18 +400,18 @@ class _MainDrawerState extends State<MainDrawer> {
 
                           }
                       ),
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 14,),
                       ListTile(
                           leading:
                           Container(
-                              padding: const EdgeInsets.only(top: 10),
+                              padding: const EdgeInsets.only(bottom: 6),
                               width: 40,
                               height: 80,
                               child: Image.asset(
                                 "assets/icon1.png", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.done.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 14,),),
+                              color: Colors.black, fontSize: 13,),),
                           onTap: () {
                             Navigator.push(
                                 context,
@@ -453,7 +454,7 @@ class _MainDrawerState extends State<MainDrawer> {
                           }
                       ),
 
-                      const SizedBox(height: 10,),
+                      const SizedBox(height: 14,),
                       ListTile(
                           leading:
                           Container(
@@ -464,7 +465,7 @@ class _MainDrawerState extends State<MainDrawer> {
                                 "assets/icon4.png", fit: BoxFit.fill,)),
                           title: Text(LocaleKeys.archived.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 14,),),
+                              color: Colors.black, fontSize: 13,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {
@@ -525,14 +526,14 @@ class _MainDrawerState extends State<MainDrawer> {
                       ListTile(
                           leading:
                           Container(
-                              padding: const EdgeInsets.only(bottom: 20),
+                              padding: const EdgeInsets.only(bottom: 6),
                               width: 30,
-                              height:50,
+                              height:36,
                               child: Image.asset(
                                 "assets/s1.png", fit: BoxFit.fill,)),
                           title:Text(LocaleKeys.settings.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 14,),),
+                              color: Colors.black, fontSize: 13,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {
@@ -548,12 +549,12 @@ class _MainDrawerState extends State<MainDrawer> {
 
                           }
                       ),
-                      const SizedBox(height: 4,),
+                      const SizedBox(height: 10,),
 
                       ListTile(
                           leading:
                           Container(
-                              padding: const EdgeInsets.only(bottom: 20),
+                              padding: const EdgeInsets.only(bottom: 6),
                               width: 30,
                               height:70,
                               child:const Icon(Icons.rate_review_outlined,color:Colors.red,)),
@@ -562,7 +563,7 @@ class _MainDrawerState extends State<MainDrawer> {
                             LocaleKeys.rateApp.tr(),
 
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 14,),),
+                              color: Colors.black, fontSize: 13,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {
@@ -614,17 +615,17 @@ class _MainDrawerState extends State<MainDrawer> {
 
                           }
                       ),
-                      const SizedBox(height: 4,),
+                      const SizedBox(height: 10,),
                       ListTile(
                           leading:
                           Container(
-                              padding: const EdgeInsets.only(bottom: 20),
+                              padding: const EdgeInsets.only(bottom: 6),
                               width: 30,
                               height:50,
                               child:const Icon(Icons.task)),
-                          title:Text(LocaleKeys.twelvetask.tr(),
+                          title:Text(LocaleKeys.soon.tr(),
                             style: const TextStyle(
-                              color: Colors.black, fontSize: 15,),),
+                              color: Colors.black, fontSize: 13,),),
                           onTap: () async {
                             final isLoaded = await interstitialAd.isLoaded;
                             if (isLoaded ?? false) {

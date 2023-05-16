@@ -30,7 +30,7 @@ class GoalsLogin extends StatelessWidget {
           ),
           const SizedBox(height: 20,),
     Custom_Text(text: LocaleKeys.goal_login.tr(),
-          fontSize:20,
+          fontSize:17,
             color:Colors.black,
             alignment:Alignment.center,
           ),

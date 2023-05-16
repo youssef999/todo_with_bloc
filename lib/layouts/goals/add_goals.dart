@@ -173,12 +173,12 @@ TextEditingController endDateController=TextEditingController();
                             text: "$c : ",
                             alignment: Alignment.center,
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 17,
                           ): Custom_Text(
                             text: LocaleKeys.goal.tr(),
                             alignment: Alignment.center,
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 17,
                           ),
                           TextFormField(
                             // ignore: prefer_const_constructors
@@ -215,7 +215,7 @@ TextEditingController endDateController=TextEditingController();
                             text: "${LocaleKeys.notes.tr()} : ",
                             alignment: Alignment.center,
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 17,
                           ),
                           TextFormField(
                             // ignore: prefer_const_constructors
@@ -328,7 +328,7 @@ TextEditingController endDateController=TextEditingController();
 
                               message:LocaleKeys.goalDone.tr(),
                               icon: Icon(Icons.done,
-                                  size: 28.0, color: ColorManager.white),
+                                  size: 26.0, color: ColorManager.white),
                               duration:  const Duration(seconds: 3),
                               leftBarIndicatorColor: Colors.red,
                               backgroundColor:Colors.black)

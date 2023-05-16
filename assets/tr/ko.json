@@ -11,7 +11,7 @@
     "email": "이메일",
     "pass": "비밀번호",
     "SignUp": "계정 만들기",
-   
+    "soon": "곧",
     "taskadded": "작업이 성공적으로 추가되었습니다.",
     "Details": "세부 사항",
     "ChangeColor": "배경색 변경",
@@ -26,7 +26,7 @@
     "name":"이름",
    "whiteTheme": "기본 바탕화면 ",
    
-    "yellowTheme" : "옐로우 & 핑크",
+    "yellowandpinkThme" : "옐로우 & 핑크",
    
      "RBCs": "적혈구 그룹",
      "PLEASEENTERTitle": "주소를 입력하세요",

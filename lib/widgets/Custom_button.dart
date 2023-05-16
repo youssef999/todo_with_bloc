@@ -20,8 +20,8 @@ import 'package:todo_app/resources/styles_manager.dart';
   Widget build(BuildContext context) {
     return
       SizedBox(
-        width:156,
-        height:52,
+        width:146,
+        height:50,
         child:InkWell(
           child: Container(
             decoration:  BoxDecoration(

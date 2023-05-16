@@ -68,7 +68,7 @@ class _EditGoalsState extends State<EditGoals> {
             ),
             Custom_Text(
                 text: LocaleKeys.notes2.tr(),
-                fontSize: 21,
+                fontSize: 18,
                 alignment: Alignment.center),
             TextFormField(
               // ignore: prefer_const_constructors

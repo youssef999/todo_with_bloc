@@ -83,7 +83,7 @@ class LoginLayout extends StatelessWidget {
                           text: LocaleKeys.login.tr(),
                            color:Colors.white,
                           alignment:Alignment.center,
-                          fontSize: 18,
+                          fontSize: 15,
                         ),
                       ),
                     ),

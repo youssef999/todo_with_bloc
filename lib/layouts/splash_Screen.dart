@@ -64,14 +64,13 @@ class _SplashScreenState extends State<SplashScreen> {
                        children: [
                          if(x==true)
                            TranslationAnimatedWidget(
-
                                //enabled: this.displayMyWidget, //update this boolean to forward/reverse the animation
                                values: const [
                                  Offset(0, 200), // disabled value value
                                  Offset(0, 250), //intermediate value
                                  Offset(0, 0) //enabled value
                                ],
-                               child: const Custom_Text(text: 'TO',alignment:Alignment.center,fontSize:18)),
+                               child: const Custom_Text(text: 'TO',alignment:Alignment.center,fontSize:15)),
 
 
                          const SizedBox(width: 5,),

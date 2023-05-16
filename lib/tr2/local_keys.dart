@@ -38,7 +38,8 @@ abstract class  LocaleKeys {
 
 
   static const whiteTheme = 'whiteTheme';
-  static const yellowandpinkThme = 'yellowTheme';
+
+  static const yellowandpinkThme = 'yellowandpinkThme';
 
   static const date = 'date';
   static const enterdate = 'enterDate';
@@ -85,6 +86,7 @@ abstract class  LocaleKeys {
   static const weektask3 = 'weektask3';
   static const monthtask3 = 'monthtask3';
   static const yeartask3 = 'yeartask3';
+  static const soon = 'soon';
 
 
 

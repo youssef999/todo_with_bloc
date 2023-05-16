@@ -31,7 +31,7 @@
  "name":"الأسم",
 "whiteTheme": "خلفية الأساسية ",
 
- "yellowTheme" : "الأصفر & الزهري ",
+ "yellowandpinkThme" : "الأصفر & الزهري ",
 
   "RBCs": "فريق الكريات الحمراء",
   "PLEASEENTERTitle": "ادخل العنوان ",
@@ -55,6 +55,7 @@
   "monthtask": "اهداف شهري",
   "yeartask": "اهداف سنوي",
  "dailytask2": "مهام يومية",
+ "soon": "قريبا",
  "weektask2": "مهام أسبوعية",
  "monthtask2": "مهام شهرية",
  "yeartask2": "مهام سنوية",

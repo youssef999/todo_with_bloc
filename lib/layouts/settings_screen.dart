@@ -81,6 +81,7 @@ class SettingsScreeen extends StatelessWidget {
             const SizedBox(height: 20,),
 
             CustomButton(text: LocaleKeys.wallpaper.tr(), onPressed:() async {
+
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) =>

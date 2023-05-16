@@ -97,13 +97,16 @@ class RegisterLayout extends StatelessWidget {
                       ),
                     ),
                     onTap:(){
-                      if (email.text.length > 5 &&
-                          email.text.contains('@')==true&&
+                      if (
+                          email.text.contains('@')==true &&
                           password.text.length > 5) {
 
                         Register(email.text,password.text,name.text,context);
 
-                      } else {
+
+                      }
+
+                      else {
                         Flushbar(
                           flushbarPosition:FlushbarPosition.TOP,
                           message: LocaleKeys.errorMsg.tr(),
@@ -129,7 +132,7 @@ class RegisterLayout extends StatelessWidget {
   }
 
 
-  void Register(String email , String password,String name,context) async {
+  void Register (String email , String password,String name,context) async {
 
    await Firebase.initializeApp();
     final FirebaseAuth auth = FirebaseAuth.instance;
@@ -148,21 +151,16 @@ class RegisterLayout extends StatelessWidget {
               context,
               MaterialPageRoute(builder: (context) =>
                   HomeLayout('true')));
-
-
-
-
-
-
         });
-
-
       }
 
 
 
       catch (e) {
+
         print(e.toString());
+
+
         Flushbar(
           flushbarPosition:FlushbarPosition.TOP,
           message: "${LocaleKeys.errorMsg.tr()}+$e",
@@ -172,7 +170,6 @@ class RegisterLayout extends StatelessWidget {
           leftBarIndicatorColor: Colors.cyan,
           backgroundColor:ColorManager.black,)
             .show(context);
-
 
       }
     }

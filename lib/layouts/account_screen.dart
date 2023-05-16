@@ -17,9 +17,9 @@ class AccountScreen extends StatelessWidget {
       body:Column(
         children: [
           const SizedBox(height: 70,),
-          Custom_Text(text: email,fontSize: 22,alignment:Alignment.center,color:Colors.black,),
+          Custom_Text(text: email,fontSize: 16,alignment:Alignment.center,color:Colors.black,),
           const SizedBox(height: 70,),
-          Custom_Text(text: name,fontSize: 22,alignment:Alignment.center,color:Colors.black,),
+          Custom_Text(text: name,fontSize: 16,alignment:Alignment.center,color:Colors.black,),
         ],
       ),
     );

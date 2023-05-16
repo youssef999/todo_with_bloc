@@ -120,7 +120,7 @@ import '../resources/color_manager.dart';
               title: Text(appCubit.titles[appCubit.currentIndex],style:TextStyle(
                 color:colorTitle,
 
-                fontSize:18
+                fontSize:17
               )),
               iconTheme: const IconThemeData(color: Colors.black),
               elevation: 2,
@@ -665,15 +665,17 @@ import '../resources/color_manager.dart';
                                         fontWeight: FontWeight.w600),
                                   ),
                                 ),
-                                  RaisedButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(12)),
-                                      color:Colors.red[700],
-                                      child: Text( LocaleKeys.ok.tr(),
-                                          style:const TextStyle(color:Colors.white,fontSize:22)),
-                                      onPressed:(){
-                                        Navigator.pop(dialogContext);
-                                      })
+
+                                  InkWell(
+                                    child: Card(
+                                      child:Text( LocaleKeys.ok.tr(),
+                                          style:const TextStyle(color:Colors.white,fontSize:22)) ,
+                                    ),
+                                    onTap:(){
+                                      Navigator.pop(dialogContext);
+                                    },
+                                  ),
+
                               ],
                             ),
                           ),

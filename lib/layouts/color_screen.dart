@@ -31,7 +31,7 @@ class _ColorScreenState extends State<ColorScreen> {
       body:Column(
         children: [
           const SizedBox(height: 70,),
-           Custom_Text(text: LocaleKeys.changeColor.tr(),fontSize:24,alignment:Alignment.center,),
+           Custom_Text(text: LocaleKeys.changeColor.tr(),fontSize:21,alignment:Alignment.center,),
           const SizedBox(height: 20,),
           _buildItem(LocaleKeys.whiteTheme.tr(),1),
        // LocaleKeys.entertime.tr();

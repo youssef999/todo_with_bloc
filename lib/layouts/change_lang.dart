@@ -7,7 +7,7 @@ import 'package:todo_app/app_cubit/cubit.dart';
 import 'package:todo_app/app_cubit/states.dart';
 import 'package:todo_app/resources/color_manager.dart';
 import 'package:todo_app/widgets/Custom_Text.dart';
- import 'package:admob_flutter/admob_flutter.dart';
+// import 'package:admob_flutter/admob_flutter.dart';
 import 'home_layout.dart';
 
 
@@ -20,21 +20,21 @@ class ChangeLang extends StatefulWidget {
 
 class _ChangeLangState extends State<ChangeLang> {
 
-  late AdmobInterstitial interstitialAd;
+ // late AdmobInterstitial interstitialAd;
   @override
   void initState() {
     super.initState();
 
-    interstitialAd = AdmobInterstitial(
-      //ca-app-pub-6262607150176210/2180112332
-      adUnitId: 'ca-app-pub-6262607150176210/2180112332',
-      // 'ca-app-pub-3940256099942544/1033173712',
-      listener: (AdmobAdEvent event, Map<String, dynamic>? args) {
-        if (event == AdmobAdEvent.closed) interstitialAd.load();
-
-      },
-    );
-    interstitialAd.load();
+    // interstitialAd = AdmobInterstitial(
+    //   //ca-app-pub-6262607150176210/2180112332
+    //   adUnitId: 'ca-app-pub-6262607150176210/2180112332',
+    //   // 'ca-app-pub-3940256099942544/1033173712',
+    //   listener: (AdmobAdEvent event, Map<String, dynamic>? args) {
+    //     if (event == AdmobAdEvent.closed) interstitialAd.load();
+    //
+    //   },
+    // );
+    // interstitialAd.load();
   }
 
   @override
@@ -66,19 +66,20 @@ class _ChangeLangState extends State<ChangeLang> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 20.0),
-                          child: AdmobBanner(
-                            adUnitId: 'ca-app-pub-6262607150176210/8943464259',
-                            adSize: AdmobBannerSize.BANNER,
-                            listener: (AdmobAdEvent event,
-                                Map<String, dynamic>? args) {
-                            },
-                            onBannerCreated:
-                                (AdmobBannerController controller) {
-                            },
-                          ),
-                        ),
+                        // Container(
+                        //   height: 60,
+                        //   margin: const EdgeInsets.only(bottom: 20.0),
+                        //   child: AdmobBanner(
+                        //     adUnitId: 'ca-app-pub-6262607150176210/8943464259',
+                        //     adSize: AdmobBannerSize.BANNER,
+                        //     listener: (AdmobAdEvent event,
+                        //         Map<String, dynamic>? args) {
+                        //     },
+                        //     onBannerCreated:
+                        //         (AdmobBannerController controller) {
+                        //     },
+                        //   ),
+                        // ),
 
 
                         CircleAvatar(
@@ -93,112 +94,114 @@ class _ChangeLangState extends State<ChangeLang> {
 
                         const SizedBox(height: 20,),
 
-                        SizedBox(
-                          width: 230,
-                          height: 80,
-                          child: RaisedButton(
-                            color: ColorManager.primary,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            onPressed: () async {
 
+                        SizedBox(
+                          width: 210,
+                          height: 70,
+                          child: InkWell(
+                            child: Card(
+                              color: ColorManager.primary,
+                              child:const Custom_Text(
+                                text: "العربية",
+                                color: Colors.white,
+                                alignment: Alignment.center,
+                                fontSize: 17,
+                              ),
+                            ),
+                            onTap:() async {
                               await context.setLocale(const Locale('ar'));
-
-                              final isLoaded = await interstitialAd.isLoaded;
-                              if (isLoaded ?? false) {
-                                interstitialAd.show();
-                              } else {
-                                print("not loaded");
-                              }
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => HomeLayout('false')),
                               );
-
                               appCubit. changeLang();
                             },
-                            child: const Custom_Text(
-                              text: "العربية",
-                              color: Colors.white,
-                              alignment: Alignment.center,
-                              fontSize: 19,
-                            ),
                           ),
-                        ),
+
+
+                          ),
+
 
                         const SizedBox(height: 30,),
 
                         SizedBox(
-                          height: 80,
-                          width: 230,
-                          child: RaisedButton(
-                            color: ColorManager.primary,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            onPressed: () async {
-
+                          width: 210,
+                          height: 77,
+                          child: InkWell(
+                            child: Card(
+                              color: ColorManager.primary,
+                              child:const Custom_Text(
+                                text: "English",
+                                color: Colors.white,
+                                alignment: Alignment.center,
+                                fontSize: 16,
+                              ),
+                            ),
+                            onTap:() async {
                               await context.setLocale(const Locale('en'));
-                              final isLoaded = await interstitialAd.isLoaded;
-                              if (isLoaded ?? false) {
-                                interstitialAd.show();
-                              } else {
-                                print("not loaded");
-                              }
+                              // final isLoaded = await interstitialAd.isLoaded;
+                              // if (isLoaded ?? false) {
+                              //   interstitialAd.show();
+                              // } else {
+                              //   print("not loaded");
+                              // }
 
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => HomeLayout('false')),
                               );
-
-                              appCubit. changeLang();
                             },
-                            child: const Custom_Text(
-                              text: "English ",
-                              color: Colors.white,
-                              fontSize: 19,
-                              alignment: Alignment.center,
-                            ),
                           ),
+
+
                         ),
 
 
                         const SizedBox(height: 30,),
 
-                        SizedBox(
-                          height: 80,
-                          width: 230,
-                          child: RaisedButton(
-                            color: ColorManager.primary,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15)),
-                            onPressed: () async {
 
+
+
+
+                        SizedBox(
+                          width: 210,
+                          height: 70,
+                          child: InkWell(
+                            child: Card(
+                              color: ColorManager.primary,
+                              child:const Custom_Text(
+                                text: "한국인",
+                                color: Colors.white,
+                                alignment: Alignment.center,
+                                fontSize: 17,
+                              ),
+                            ),
+                            onTap:() async {
                               await context.setLocale(const Locale('ko'));
-                              final isLoaded = await interstitialAd.isLoaded;
-                              if (isLoaded ?? false) {
-                                interstitialAd.show();
-                              } else {
-                                print("not loaded");
-                              }
+                              // final isLoaded = await interstitialAd.isLoaded;
+                              // if (isLoaded ?? false) {
+                              //   interstitialAd.show();
+                              // } else {
+                              //   print("not loaded");
+                              // }
 
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => HomeLayout('false')),
                               );
-
-                              appCubit. changeLang();
                             },
-                            child: const Custom_Text(
-                              text: "한국인",
-                              color: Colors.white,
-                              fontSize: 19,
-                              alignment: Alignment.center,
-                            ),
                           ),
+
+
                         ),
+
+
+
+
+
 
 
                       ],

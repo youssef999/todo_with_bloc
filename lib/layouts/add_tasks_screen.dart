@@ -124,14 +124,14 @@ class AddTaskScreen extends StatelessWidget {
                        Custom_Text(
                         text:LocaleKeys.task.tr(),
                         color: color3,
-                        fontSize: 17,
+                        fontSize: 15,
                         alignment:Alignment.topRight,
                       ),
                       if(LocaleKeys.task.tr()!='المهمة')
                         Custom_Text(
                           text:LocaleKeys.task.tr(),
                           color: color3,
-                          fontSize: 17,
+                          fontSize: 15,
                           alignment:Alignment.topLeft,
                         ),
                       const SizedBox(height: 5,),
@@ -139,7 +139,7 @@ class AddTaskScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             SizedBox(
-                              height:80,
+                              height:77,
                               child: TextFormField(
                                 validator: (value) {
                                   if (value.toString() == '' || value == null) {
@@ -149,7 +149,7 @@ class AddTaskScreen extends StatelessWidget {
                                 },
                                 controller: titleController,
                                 keyboardType: TextInputType.text,
-                                style:const TextStyle(fontSize:16),
+                                style:const TextStyle(fontSize:14),
                                 decoration: InputDecoration(
                                   hintText:LocaleKeys.title.tr(),
                                   hintStyle: const TextStyle(color: Colors.grey),
@@ -229,10 +229,10 @@ class AddTaskScreen extends StatelessWidget {
                   Column(
                     children: [
                       if(LocaleKeys.task.tr()=='المهمة')
-                    Custom_Text(text:LocaleKeys.time2.tr(),fontSize:17,
+                    Custom_Text(text:LocaleKeys.time2.tr(),fontSize:15,
                           color:color3,alignment:Alignment.topRight),
                       if(LocaleKeys.task.tr()!='المهمة')
-                        Custom_Text(text:LocaleKeys.time2.tr(),fontSize:17,
+                        Custom_Text(text:LocaleKeys.time2.tr(),fontSize:15,
                             color:color3,alignment:Alignment.topLeft),
                       const SizedBox(height: 5,),
                       Card(
@@ -248,7 +248,7 @@ class AddTaskScreen extends StatelessWidget {
                                   }
                                 },
                                 controller: timeController,
-                                style:const TextStyle(fontSize:16,color:Colors.purple),
+                                style:const TextStyle(fontSize:14,color:Colors.purple),
                                 keyboardType: TextInputType.datetime,
                                 decoration: InputDecoration(
                                   hintText:LocaleKeys.time.tr(),
@@ -296,7 +296,7 @@ class AddTaskScreen extends StatelessWidget {
                                   }
                                 },
                                 controller: timeEndController,
-                                style:const TextStyle(fontSize:16,color:Colors.purple),
+                                style:const TextStyle(fontSize:14,color:Colors.purple),
                                 keyboardType: TextInputType.datetime,
                                 decoration: InputDecoration(
                                   hintText:LocaleKeys.timeend.tr(),
@@ -345,7 +345,7 @@ class AddTaskScreen extends StatelessWidget {
                                 },
                                 controller: dateController,
                                 keyboardType: TextInputType.datetime,
-                                style:TextStyle(fontSize:16,color:ColorManager.prem2),
+                                style:TextStyle(fontSize:13,color:ColorManager.prem2),
                                 decoration: InputDecoration(
                                   hintText: LocaleKeys.date.tr(),
                                   hintStyle: TextStyle(fontSize:13,color:ColorManager.prem2),
@@ -405,7 +405,7 @@ class AddTaskScreen extends StatelessWidget {
                                 },
                                 controller: dateEndController,
                                 keyboardType: TextInputType.datetime,
-                                style: TextStyle(fontSize:16,color:ColorManager.prem2),
+                                style: TextStyle(fontSize:14,color:ColorManager.prem2),
                                 decoration: InputDecoration(
                                   hintText: LocaleKeys.dateend.tr(),
                                   hintStyle: TextStyle(fontSize:13,color:ColorManager.prem2),
@@ -548,7 +548,7 @@ class AddTaskScreen extends StatelessWidget {
                     child:Custom_Text(
                       text:LocaleKeys.add.tr(),
                       alignment:Alignment.center,
-                      fontSize: 18,
+                      fontSize: 16,
                       color:Colors.white,
                     ),
                   ),

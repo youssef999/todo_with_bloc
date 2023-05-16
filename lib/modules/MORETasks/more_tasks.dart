@@ -35,17 +35,17 @@ class MoreTasks extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 20.0),
-                              child: AdmobBanner(
-                                adUnitId: 'ca-app-pub-6262607150176210/8943464259',
-                                adSize: AdmobBannerSize.BANNER,
-                                listener: (AdmobAdEvent event,
-                                    Map<String, dynamic>? args) {},
-                                onBannerCreated:
-                                    (AdmobBannerController controller) {},
-                              ),
-                            ),
+                           // Container(
+                            //   margin: const EdgeInsets.only(top: 20.0),
+                            //   child: AdmobBanner(
+                            //     adUnitId: 'ca-app-pub-6262607150176210/8943464259',
+                            //     adSize: AdmobBannerSize.BANNER,
+                            //     listener: (AdmobAdEvent event,
+                            //         Map<String, dynamic>? args) {},
+                            //     onBannerCreated:
+                            //         (AdmobBannerController controller) {},
+                            //   ),
+                            // ),
                             const SizedBox(height: 20,),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -53,7 +53,7 @@ class MoreTasks extends StatelessWidget {
                                 text: LocaleKeys.TXT.tr(),
                                 alignment: Alignment.center,
                                 color:Colors.black,
-                                fontSize: 17,
+                                fontSize: 15,
                               ),
                             ),
                             //  const Icon(Icons.menu,size: 90,color:Colors.grey,),
@@ -79,7 +79,7 @@ class MoreTasks extends StatelessWidget {
                                           text: LocaleKeys.TXT.tr(),
                                           alignment: Alignment.center,
                                           color:Colors.black,
-                                          fontSize: 17,
+                                          fontSize: 15,
                                         ),
                                       ),
                                       const Divider(color:Colors.black,),
